@@ -1,6 +1,6 @@
 # Document QA with Citations
 
-[![tests](https://github.com/yordanossimegnew/document-qa-citations/actions/workflows/tests.yml/badge.svg)](https://github.com/yordanossimegnew/document-qa-citations/actions/workflows/tests.yml)
+[![tests](https://github.com/yordanossimegnew/document-qa-citations/actions/workflows/tests.yml/badge.svg)](https://github.com/yordanossimegnew/document-qa-citations/actions/workflows/tests.yml) ![Python 3.12](https://img.shields.io/badge/python-3.12-blue) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 Ask questions about your own documents (PDFs, Word files, Markdown, HTML, web pages) and get
 answers where **every claim links to the exact quoted passage and page** it came from. If the
@@ -20,6 +20,13 @@ Built with **LangGraph** and **LangChain**:
 | Cited answer | Follow-up question | Quote in context + retrieval ranks |
 |---|---|---|
 | ![Answer](docs/screenshots/cited-answer.png) | ![Follow-up](docs/screenshots/follow-up.png) | ![Context](docs/screenshots/context-and-retrieval.png) |
+
+## Engineering highlights
+
+- Hybrid retrieval in a single SQL query: pgvector HNSW + Postgres full-text, fused with Reciprocal Rank Fusion.
+- Uses Claude's native Citations API. Every cited span is mapped back to `{document, page, quote}` and **verified against the stored text**.
+- Chunks never cross a page boundary, so every citation points at a real page.
+- URL ingestion follows redirects manually and SSRF-checks every hop.
 
 ## Features
 

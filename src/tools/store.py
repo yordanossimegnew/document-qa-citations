@@ -14,8 +14,25 @@ import uuid
 from datetime import datetime, timezone
 
 from pgvector.sqlalchemy import Vector
-from sqlalchemy import (Column, Computed, DateTime, ForeignKey, Index, Integer, LargeBinary, MetaData, String,
-                        Table, Text, create_engine, delete, func, insert, select, text)
+from sqlalchemy import (
+    Column,
+    Computed,
+    DateTime,
+    ForeignKey,
+    Index,
+    Integer,
+    LargeBinary,
+    MetaData,
+    String,
+    Table,
+    Text,
+    create_engine,
+    delete,
+    func,
+    insert,
+    select,
+    text,
+)
 from sqlalchemy.dialects.postgresql import JSONB, TSVECTOR
 from sqlalchemy.engine import Engine
 
