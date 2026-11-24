@@ -1,5 +1,7 @@
 # Document QA with Citations
 
+[![tests](https://github.com/yordanossimegnew/document-qa-citations/actions/workflows/tests.yml/badge.svg)](https://github.com/yordanossimegnew/document-qa-citations/actions/workflows/tests.yml)
+
 Ask questions about your own documents (PDFs, Word files, Markdown, HTML, web pages) and get
 answers where **every claim links to the exact quoted passage and page** it came from. If the
 documents don't contain the answer, it says so instead of guessing.
